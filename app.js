@@ -1,21 +1,30 @@
 require('dotenv').config();
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI); 
 
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
-var index = require('./controllers/index');
-var users = require('./controllers/userController');
+const index = require('./controllers/index');
+const users = require('./controllers/userController');
 const products = require('./controllers/productController')
 const cart = require('./controllers/cartController')
-var app = express();
+const app = express();
 
+const db = mongoose.connection 
+
+db.on('open', () =>{
+  console.log('You up!! Connected to DD!!! ')
+})
+
+db.on('error', (err) => {
+  console.log(err)
+})
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -29,14 +38,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-console.log('Connected to DD!')
 // app.use('/users', userController);
 // app.use('/products', productController);
 // app.use('/carts', cartController)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
