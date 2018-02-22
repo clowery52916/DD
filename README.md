@@ -12,7 +12,7 @@ So, if you need some wine, drop us a line, if you need some beer, we are here, i
 
 Technical Specifications:
 
-To build out this application, I used MEN stack, which is Mongoose, Express and NodeJs, using MongoDB for the database and using a built in helper methods using Handlebars, to help build out semantic templates, frustration free. HTML, CSS and JavaScript were used for style and functionality. This application was deployed using Heroku.  This is a full crud application, that has the following:
+To build out this application, I used MEN stack, which is Mongoose, Express and NodeJs, using MongoDB for the database and using a built in helper methods using Handlebars. Handlebars is used to help build out semantic templates, frustration free. HTML, CSS and JavaScript were used for style and functionality. This application was deployed using Heroku.  This is a full crud application, that has the following:
 
 Project Links:
 
