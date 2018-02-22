@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
+const productSchema = require('./productSchema')
 const Schema = mongoose.Schema
 
 const cartSchema = new Schema({
- product: [], 
+ products: [ productSchema ], 
  quantity: Number, 
  price: Number, 
  removeItem: String

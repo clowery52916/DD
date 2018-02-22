@@ -5,8 +5,10 @@ const router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'DD' });
 });
-
-
+//
+router.get('/new', (req, res) => {
+  res.render('users/new')
+})
 
 
 

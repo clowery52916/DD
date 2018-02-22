@@ -12,3 +12,13 @@ db.on('open', () => {
 db.on('error', (err) => {
     console.log(err)
 })
+
+//creating new products 
+
+const beer = new Product ({
+product:'Monday Night Brewing, Draft Kilt',  
+ price: 3.49, 
+ picture: 'https://imgur.com/a/7eyhm'
+})
+
+
