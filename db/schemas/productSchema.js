@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const productSchema = new Schema({
  product: String, 
  price: Number, 
- picture: Image
+ picture: String
   //reach goal - insert password
   
 })
