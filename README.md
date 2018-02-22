@@ -14,11 +14,15 @@ Technical Specifications
 To build out this application, I used MEN stack, which is Mongoose, Express and NodeJs, using MongoDB for the database and using a built in helper methods using Handlebars, to help build out semantic templates, frustration free. HTML, CSS and JavaScript were used for style and functionality. This application was deployed using Heroku.  This is a full crud application, that has the following:
 
 Project Links:
+
 Heroku: https://afternoon-ridge-64091.herokuapp.com/
+
 Scrum Board & Trello: https://trello.com/b/0OQQT8xM/wdi-project-2-list
 
 Wireframes used: https://www.figma.com/file/0GBQq6BXLpyW5yhE31US5N0Q/Untitled
+
 and 
+
 https://imgur.com/VYZhD9E
 
 ERD: https://imgur.com/2MKpl1U
