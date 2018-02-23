@@ -1,8 +1,6 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI); 
-
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -11,14 +9,11 @@ const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser');
 
-const userController = require('./controllers/userController')
-const productController = require('./controllers/productController')
-const cartController = require('./controllers/cartController')
-const index = require('./controllers/index');
-// const users = require('./controllers/userController');
-// const products = require('./controllers/productController')
-// const cart = require('./controllers/cartController')
+const index = require('./controllers/index')
+
 const app = express();
+
+mongoose.connect(process.env.MONGODB_URI); 
 
 const db = mongoose.connection 
 
@@ -39,10 +34,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
-
+const userController = require('./controllers/userController')
+const productController = require('./controllers/productController')
+const cartController = require('./controllers/cartController')
 
 app.use('/', index)
 app.use('/users', userController)
@@ -70,4 +67,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = app
