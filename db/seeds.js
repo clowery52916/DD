@@ -6,7 +6,6 @@ const User = require('../models/user')
 const Cart = require('../models/cart')
 const mongoose = require('mongoose')
 
-//separate from server
 
 mongoose.connect('mongodb://localhost/DD')
 const db = mongoose.connection 
@@ -38,14 +37,9 @@ const adam = new User ({
 
 })
 
-// remove all old information
-Product.remove().then(() => {
+// remove all stored info on users& create new users 
 
-    return User.remove()
-  }).then(() => {
-  
-    // build out new sodas and companies
-    // and save them to the database
+User.remove().then(() => {
     return User.insertMany([ court, adam ])
   }).then(() => {
 

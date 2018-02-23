@@ -1,0 +1,9 @@
+
+  {{#each product}}
+    <li>{{name}}</li>
+  {{/each}}
+</ul>
+<form action="/products/{{savedProduct._id}}?_method=POST"></form>
+<button><a href="/products/{{savedProduct._id}}">Product List</a></button>
+<br>
+

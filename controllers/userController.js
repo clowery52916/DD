@@ -64,7 +64,7 @@ router.get('/:id/edit', (req, res) =>{
 
 //update user 
 
-router.patch('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, {
     name: req.body.name, 
     age: req.body.age, 
@@ -75,7 +75,7 @@ router.patch('/:id', (req, res) => {
   })
 })
 
-  // destroy
+  // destroy user
 
 router.delete('/:id', (req, res) => {
   User.findByIdAndRemove(req.params.id).then(()=> {

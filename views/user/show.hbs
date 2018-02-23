@@ -1,5 +1,5 @@
 
-<h1>Hello, {{name}}. Welcome Back!</h1>
+<h1>Hello, {{user.name}}. Welcome Back!</h1>
 
 <h3>My Address:{{user.address}}</h3>
 <h3>My Birthday:{{user.age}}</h3>
@@ -8,10 +8,10 @@
     <li>{{name}}</li>
   {{/each}}
 </ul>
-<form action="/users/{{user.id}}?_method=POST"></form>
-<a href="/users/{{user._id}}/products">Product List</a>
+<form action="/products/{{products_.id}}?_method=POST"></form>
+<button><a href="/products{{products._id}}">Product List</a></button>
 <br>
-<a href="/users/{{user._id}}/edit">Settings {{user.name}}</a>
+<button><a href="/users/{{user._id}}/edit">Settings {{user.name}}</a></button>
 
 <form action="/users/{{user._id}}?_method=DELETE" method="POST">
   <button type="submit">Delete {{user.name}}</button>
