@@ -37,13 +37,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
+
 const userController = require('./controllers/userController')
 const productController = require('./controllers/productController')
 const cartController = require('./controllers/cartController')
 
 app.use('/', index)
 app.use('/users', userController)
-app.use('/users/:userId/index', index)
+app.use('/users/:userId/new', index)
 app.use('/cart', cartController)
 app.use('/products', productController)
 app.use('/products/:productId/users', userController)

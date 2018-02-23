@@ -1,13 +1,15 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+const productSchema = require('./productSchema')
 const userSchema = new Schema({
   name: String,
-  id: String,
-  location: String,
-  Age: Number, 
-  address: String, 
-  phoneNumber: []
+  age: Number, 
+  address: String,
+  products: [ productSchema ] 
+  // id: String,
+  // location: String,
+ 
+  // phoneNumber: []
   //reach goal - insert password
   
 })

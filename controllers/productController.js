@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/product')
+const User = require('../models/user')
+const Cart = require('../models/cart')
 
 /* GET PRODUCTS page. */
 router.get('/', function(req, res, next) {

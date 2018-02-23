@@ -1,8 +1,20 @@
-<h1>{{user.name}}</h1>
 
-<h3>{{user.location}}</h3>
-<ul>
-  {{#each user.address}}
-    <li>{{user.phoneNumber}}</li>
+<h1>Hello, {{user.name}}. Welcome Back!</h1>
+
+<h3>My Address:{{user.address}}</h3>
+<h3>My Birthday:{{user.age}}</h3>
+<ul>My Products
+  {{#each user.product}}
+    <li>{{name}}</li>
   {{/each}}
 </ul>
+<form action="/users/{{user.id}}?_method=POST"></form>
+<a href="/users/{{user._id}}/products">Product List</a>
+<br>
+<a href="/users/{{user._id}}/edit">Settings {{user.name}}</a>
+
+<form action="/users/{{user._id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete {{user.name}}</button>
+</form>
+
+{{!-- <a href="/users{{user._id}}">Settings</a> --}}

@@ -1,0 +1,9 @@
+<h1>Account Reactivation</h1>
+
+<ul>
+  {{#each user._id}}
+    <li><a href="/users/new{{user._id}}" >{{name}}</a></li>
+  {{/each}}
+</ul>
+
+<a href="/">Create Account</a>

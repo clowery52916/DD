@@ -2,46 +2,86 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user')
 
+router.get('/', (req, res) => {
+  console.log('new')
 
-/* get user page. */
-router.get('/', function(req, res) {
-    res.send('on userController page')
-    User.find().then((users) => {
-    res.render('/user/new', {
-      users:users
-    })
+  User.find().then((users) => {
+  res.render('user/index', {
+    users:users
+  })
 
-    })
-   
+  })
+})
 //create new page for new user
 router.get('/new', (req, res) => {
+  res.send('new user')
   res.render('user/new')
 })
-})
 
-//update user information
+
+
+
+//create new user 
 router.post('/', (req, res) => {
   
   const newUser = new User ({
     name: req.body.name,
-    id: req.body.id,
-    location: req.body.location,
-    Age: req.body.Age, 
+    age: req.body.Age, 
     address: req.body.address, 
-    phoneNumber: [req.body.phoneNumber]
+    beer: [req.body.beer]
   }) 
 
-  res.redirect('users/new')
+  //saving new user
+    newUser.save().then((savedUser)=> {
+      console.log(savedUser)
+      res.redirect(`/users/${savedUser._id}`)
+  
+  }) 
+})
 
-  // router.get('/user/new/:id', (req, res) => {
-  //   res.render('/user/new/show')
-  // })
-  // User.index.push(newUser)
+//showing new user
+router.get('/:id', (req, res) => {
 
-//   return User.save().then((updateUser) => {
-//     res.redirect(`/users/${req.params.userId}/index`)
-//   })
+  User.findById(req.params.id).then((user) => {
+
+    res.render('user/show', {
+    user: user
+  })
+})
+
 
 })
+//edit user 
+router.get('/:id/edit', (req, res) =>{
+  User.findById(req.params.id).then((user) => {
+    res.render('user/edit', {
+      id: req.params.id, 
+      user: user
+    })
+  })
+})
+
+
+//update user 
+
+router.patch('/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, {
+    name: req.body.name, 
+    age: req.body.age, 
+    address: req.body.address, 
+    products: req.body.products
+  }, { new: true } ).then((updatedUser) => {
+      res.redirect(`/users/${updatedUser._id}`)
+  })
+})
+
+  // destroy
+
+router.delete('/:id', (req, res) => {
+  User.findByIdAndRemove(req.params.id).then(()=> {
+      res.redirect('/users')
+    })
+    })
+  
 
 module.exports = router;

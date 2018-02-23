@@ -1,6 +1,9 @@
 // import { mongo } from 'mongoose';
+require('dotenv').config()
+
 const Product = require('../models/product')
 const User = require('../models/user')
+const Cart = require('../models/cart')
 const mongoose = require('mongoose')
 
 //separate from server
@@ -21,17 +24,31 @@ const beer = new Product ({
  price: 3.49, 
  picture: 'https://imgur.com/a/7eyhm'
 })
+const wine = new Product ({
+  product: 'Robert Mondavi Cabernet', 
+  price: 12.99, 
 
+})
+const court = new User ({
+  name: 'Court', 
+
+})
+const adam = new User ({
+  name: 'Adam', 
+
+})
 
 // remove all old information
-User.remove().then(() => {
+Product.remove().then(() => {
+
     return User.remove()
   }).then(() => {
   
     // build out new sodas and companies
     // and save them to the database
-    return User.insertMany([ beer ])
+    return User.insertMany([ court, adam ])
   }).then(() => {
+
     console.log('Saved Successfully')
     db.close()
   }).catch((err) => {
