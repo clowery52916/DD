@@ -5,7 +5,7 @@ const Product = require('../models/product')
 /* GET PRODUCTS page. */
 router.get('/', function(req, res, next) {
     res.send('on productController page')
-  res.render('index', { title: 'Products' });
+  res.render('', { title: 'Products' });
 });
 
 router.get('./new', (req, res) => {

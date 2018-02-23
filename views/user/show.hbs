@@ -1,8 +1,8 @@
 <h1>{{user.name}}</h1>
-<p>{{user.location}} </p>
-<p>{{user.age}}</p>
-<p>{{user.phoneNumber}} </p>
 
-<form method="POST" action="/products/{{companyId}}/sodas/{{user._id}}?_method=DELETE">
-  <button type="submit">Delete This User</button>
-</form>
+<h3>{{user.location}}</h3>
+<ul>
+  {{#each user.address}}
+    <li>{{user.phoneNumber}}</li>
+  {{/each}}
+</ul>

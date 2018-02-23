@@ -7,7 +7,7 @@ const User = require('../models/user')
 router.get('/', function(req, res) {
     res.send('on userController page')
     User.find().then((users) => {
-    res.render('user/index', {
+    res.render('/user/new', {
       users:users
     })
 
@@ -30,6 +30,8 @@ router.post('/', (req, res) => {
     address: req.body.address, 
     phoneNumber: [req.body.phoneNumber]
   }) 
+
+  res.redirect('users/new')
 
   // router.get('/user/new/:id', (req, res) => {
   //   res.render('/user/new/show')
