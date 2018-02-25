@@ -1,20 +1,33 @@
 
 <h1>Hello, {{user.name}}. Welcome Back!</h1>
-
-<h3>My Address:{{user.address}}</h3>
-<h3>My Birthday:{{user.age}}</h3>
-<ul>My Products
+<br>
+<h6>My Address: {{user.address}}</h6>
+<br>
+<h6>My Birthday: {{user.age}}</h6>
+</br>
+<h6>My Phone Number: {{user.phoneNumber}}</h6>
+</br>
+<h6>My Recent Products</h6>
+<ul>
   {{#each user.product}}
     <li>{{name}}</li>
   {{/each}}
 </ul>
-<form action="/products/{{products_.id}}?_method=POST"></form>
-<button><a href="/products{{products._id}}">Product List</a></button>
 <br>
-<button><a href="/users/{{user._id}}/edit">Settings {{user.name}}</a></button>
 
-<form action="/users/{{user._id}}?_method=DELETE" method="POST">
-  <button type="submit">Delete {{user.name}}</button>
+
+<button><a href="/users/{{user._id}}/edit">Settings</a></button>
+
+<form method="POST" action="/products">
+  {{!-- <a href="" --}}
+  <button type="submit">Libations Await</button>
+  {{!-- </a> --}}
 </form>
 
-{{!-- <a href="/users{{user._id}}">Settings</a> --}}
+<form action="/carts" method="POST"></form>
+<button type="submit">Cart</button>
+
+
+<form action="/users/{{user._id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete</button>
+</form>

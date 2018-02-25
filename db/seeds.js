@@ -27,14 +27,24 @@ const wine = new Product ({
   product: 'Robert Mondavi Cabernet', 
   price: 12.99, 
 
+
 })
 const court = new User ({
   name: 'Court', 
+  address: [28494, 'hopewell lane '],
+  phoneNumber: ['(',470, '-', 456, '-',9087],
+  age: 34, 
+  products: [ beer, wine]
 
 })
 const adam = new User ({
   name: 'Adam', 
 
+})
+const item = new Cart ({
+  product: beer, 
+  price: 11.99, 
+  quantity: 1
 })
 
 // remove all stored info on users& create new users 

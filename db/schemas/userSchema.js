@@ -3,15 +3,10 @@ const Schema = mongoose.Schema
 const productSchema = require('./productSchema')
 const userSchema = new Schema({
   name: String,
+  address: [ String,Number ],
   age: Number, 
-  address: String,
-  products: [ productSchema ] 
-  // id: String,
-  // location: String,
- 
-  // phoneNumber: []
-  //reach goal - insert password
-  
+  phoneNumber: Number, 
+  products: [ productSchema ]   
 })
 
 module.exports = userSchema

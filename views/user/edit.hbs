@@ -1,5 +1,5 @@
-
-<a href="/users/{{id}}">Return to Home Page {{user.name}}</a>
+{{!-- 
+<a href="/users/{{id}}">Return to Home Page</a> --}}
 
 <h1>Update your Information</h1>
 <form method="POST" action="/users">
@@ -13,7 +13,7 @@
   </div>
   <div>
     <label for="age">Age</label>
-    <input type="text" name="address">
+    <input type="number" name="age">
   </div>
   <div>
     <label for="phoneNumber">Phone Number</label>
@@ -22,5 +22,8 @@
   
   <button type="confirm">Confirm</button>
 </form>
+<form method="POST" action="/products">
+  
+  <button type="submit">Libations Await</button>
 
-<button><a href="/products"></a>Libations</button>
+</form>
