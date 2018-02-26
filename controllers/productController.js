@@ -34,24 +34,24 @@ router.post('/', (req, res) => {
   })
 
 
-  
 
-//showing new products 
-router.get('/:id', (req, res) => {
 
-  Product.findById(req.params.id).then((product) => {
+  //showing new products 
+  router.get('/:id', (req, res) => {
 
-    res.render('product/edit', {
-      product: product //product show page
+    Product.findById(req.params.id).then((product) => {
+
+      res.render('product/edit', {
+        product: product //product show page
+      })
     })
   })
-})
 
-newProduct.save().then((savedProduct) => {
-  console.log(savedProduct)
-  res.redirect(`/products/${savedProduct._id}`) //
+  newProduct.save().then((savedProduct) => {
+    console.log(savedProduct)
+    res.redirect(`/products/${savedProduct._id}`) //
 
-})
+  })
 })
 
 router.put('/cart', (req, res) => {

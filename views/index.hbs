@@ -1,22 +1,23 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}... your Drink Driver</p>
-
-<h1>Sign Up</h1>
+<div class='new'>
+<h2>Sign Up</h2>
 <form method="POST" action="/users">
-  <div>
+  <div class='light'>
     <label for="name">User Name</label>
     <input type="text" name="name">
   </div>
-  <div>
+  </div>
+  <div class='returning'>
     <label for="email">Email</label>
     <input type="text" name="email">
   </div>
-  
+
   <button type="submit">Create</button>
 </form>
 
 
-<h1>Sign In</h1>
+<h2>Sign In</h2>
 <form method="POST" action="/products">
   <div>
     <label for="name">User Name</label>

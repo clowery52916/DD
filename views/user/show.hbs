@@ -1,5 +1,5 @@
-
-<h1>Hello, {{user.name}}. Welcome Back!</h1>
+<h2>
+  Hello, {{user.name}}. Welcome Back!</h2>
 <br>
 <h6>My Address: {{user.address}}</h6>
 <br>
@@ -7,27 +7,18 @@
 </br>
 <h6>My Phone Number: {{user.phoneNumber}}</h6>
 </br>
-<h6>My Recent Products</h6>
-<ul>
-  {{#each user.product}}
-    <li>{{name}}</li>
-  {{/each}}
-</ul>
-<br>
 
 
-<button><a href="/users/{{user._id}}/edit">Settings</a></button>
+
+<button>
+  <a href="/users/{{user._id}}/edit">Settings</a>
+</button>
 
 <form method="POST" action="/products">
- 
+
   <button type="submit">Libations Await</button>
- 
+
 </form>
-
-<form action="/cart/{{product.product}}" method="POST"></form>
-<button type="submit">Cart</button>
-
-
 <form action="/users/{{user._id}}?_method=DELETE" method="POST">
   <button type="submit">Delete</button>
 </form>

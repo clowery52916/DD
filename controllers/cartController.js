@@ -27,8 +27,8 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
 
   const newCart = new Cart({
-    product: req.body.product, 
-    price: req.body.price, 
+    product: req.body.product,
+    price: req.body.price,
     quantity: req.body.quantity
   })
 
@@ -66,9 +66,9 @@ router.get('/:id/edit', (req, res) => {
 
 router.put('/:id', (req, res) => {
   Cart.findByIdAndUpdate(req.params.id, {
-   product: req.body.products, 
-   price: req.body.price,
-   quantity: req.body.quantity
+    product: req.body.products,
+    price: req.body.price,
+    quantity: req.body.quantity
   }, {
     new: true
   }).then((updatedCart) => {
