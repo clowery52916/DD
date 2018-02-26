@@ -15,11 +15,11 @@ router.get('/', (req, res) => {
 
   })
 })
-// //create new page for new products
-// router.get('/products', (req, res) => {
-//   res.send('new product')
-//   res.render('products/')
-// })
+//create new page for new products
+router.get('/products/', (req, res) => {
+  res.send('new product')
+  res.render('/products/')
+})
 
 
 
@@ -53,5 +53,19 @@ newProduct.save().then((savedProduct) => {
 
 })
 })
+
+router.put('/cart', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, {
+    product: req.body.product,
+    price: req.body.price,
+    quantity: req.body.quantity,
+
+  }, {
+    new: true
+  }).then((updatedUser) => {
+    res.redirect(`/users/${updatedUser._id}`)
+  })
+})
+
 
 module.exports = router;

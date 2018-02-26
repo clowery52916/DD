@@ -1,30 +1,31 @@
 
-
-<form method="POST" action="/cart">
   <div>
     <h1>DD Store</h1>
 
 <h3>Beer List</h3>
-<ol>
-    <li>Bud Light<button type="confirm">Add</button></li>
-    <li>Miller Light<button type="confirm"> Add</button></li>
-</ol>
-<h3>Wine List</h3>
-    <ol>
-        <li>Cabernet<button type="confirm"> Add</button></li>
-        <li>Chardonnay<button type="confirm"> Add</button></li>
-        <li>Pinot Grigo<button type="confirm"> Add</button></li>
-        <li>Pinot Nior<button type="confirm">Add</button></li>
-        <li>Sauvignon Blanc<button type="confirm">Add</button></li>
-    </ol>
-<h3>Liquor List</h3>
-    <ol>
-        <li>Vodka<button type="confirm"> Add</button></li>
-        <li>Bourbon<button type="confirm">Add</button></li>
-        <li>Rum<button type="confirm">Add</button></li>
-        <li>Tequila<button type="confirm">Add</button></li>
-        <li>Scotch<button type="confirm">Add</button></li>
-    </ol>
+  <form action="/cart">
+  <div>
+  <label for="beer">Miller Light</label>
+  <input type="radio" name="beer" id="Miller Light" value="beer"><br>
+  <label for="beer">Bud Light</label>
+  <input type="radio" name="beer" id="Bud Light" value="beer"><br>
   </div>
+   <form action="/cart">
+  <div>
+    <h3>Wine List</h3>
+  <label for="wine">Cabernet</label>
+  <input type="radio" name="wine" id="Cabernet" value="wine"><br>
+  <label for="wine">Chardonnay</label>
+  <input type="radio" name="wine" id="Chardonnay" value="wine"><br>
+  </div>
+   <div>
+    <h3>Liquor List</h3>
+  <label for="liquor">Vodka</label>
+  <input type="radio" name="wine" id="Vodka" value="liquor"><br>
+  <label for="liquor">Rum</label>
+  <input type="radio" name="liquor" id="Rum" value="liquor"><br>
+  </div>
+  <input type="submit" value="Add to Cart">
+</form>
 
 

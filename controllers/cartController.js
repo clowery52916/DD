@@ -50,7 +50,6 @@ router.get('/:id', (req, res) => {
     })
   })
 
-
 })
 //edit cart 
 router.get('/:id/edit', (req, res) => {
@@ -67,15 +66,13 @@ router.get('/:id/edit', (req, res) => {
 
 router.put('/:id', (req, res) => {
   Cart.findByIdAndUpdate(req.params.id, {
-    name: req.body.name,
-    address: req.body.address,
-    age: req.body.age,
-    phoneNumber: req.body.phoneNumber,
-    products: req.body.products
+   product: req.body.products, 
+   price: req.body.price,
+   quantity: req.body.quantity
   }, {
     new: true
   }).then((updatedCart) => {
-    res.redirect(`/items/${updatedCart._id}`)
+    res.redirect(`/cart/${updatedCart._id}`)
   })
 })
 
@@ -83,7 +80,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   Cart.findByIdAndRemove(req.params.id).then(() => {
-    res.redirect('/items')
+    res.redirect('/cart')
   })
 })
 

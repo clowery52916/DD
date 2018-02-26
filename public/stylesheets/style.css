@@ -1,8 +1,21 @@
+html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  background-image: cross-fade()
+}
+    
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+  text-decoration-line: none
+}
+
+h1 {
+  opacity: 0.5
 }

@@ -1,0 +1,1 @@
+document.getElementById('Miller Light').onclick = 'Miller Light'

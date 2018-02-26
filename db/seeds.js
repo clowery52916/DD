@@ -21,18 +21,19 @@ db.on('error', (err) => {
 const beer = new Product ({
  product:'Monday Night Brewing, Draft Kilt',  
  price: 3.49, 
- picture: 'https://imgur.com/a/7eyhm'
+ quantity: 1
 })
-const wine = new Product ({
-  product: 'Robert Mondavi Cabernet', 
-  price: 12.99, 
 
+  const wine = new Cart ({
+    product: 'Chardonnay', 
+    price: 11.99, 
+    quantity: 1
+  })
 
-})
 const court = new User ({
   name: 'Court', 
   address: [28494, 'hopewell lane '],
-  phoneNumber: ['(',470, '-', 456, '-',9087],
+  phoneNumber: [4709899087],
   age: 34, 
   products: [ beer, wine]
 
@@ -41,19 +42,24 @@ const adam = new User ({
   name: 'Adam', 
 
 })
-const item = new Cart ({
-  product: beer, 
-  price: 11.99, 
-  quantity: 1
-})
+
 
 // remove all stored info on users& create new users 
 
 User.remove().then(() => {
     return User.insertMany([ court, adam ])
   }).then(() => {
-
     console.log('Saved Successfully')
+    db.close()
+  }).catch((err) => {
+    console.log(err)
+    db.close()
+  })
+
+  Product.remove().then(() => {
+    return Product.insertMany([beer, wine])
+  }).then (() => {
+    console.log('Success')
     db.close()
   }).catch((err) => {
     console.log(err)
