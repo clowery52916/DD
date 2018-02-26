@@ -1,3 +1,7 @@
+#input {
+  font-size: 20px
+}
+
 html {
   font-family: GillSans, Calibri, Trebuchet, sans-serif;
   background: url(https://i.imgur.com/MtLzPhh.jpg) no-repeat center center fixed;
@@ -34,9 +38,15 @@ p {
   font-size: 30px;
 }
 
-h2, h3 {
+h2 {
   opacity: 0.9;
   font-size: 40px;
+  color: whitesmoke;
+  text-shadow: 30px;
+}
+h3 {
+  opacity: 0.9;
+  font-size: 30px;
   color: whitesmoke;
   text-shadow: 30px;
 }
