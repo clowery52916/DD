@@ -15,11 +15,11 @@ router.get('/', (req, res) => {
 
   })
 })
-//create new page for new products
-router.get('/new', (req, res) => {
-  res.send('new product')
-  res.render('product/new')
-})
+// //create new page for new products
+// router.get('/products', (req, res) => {
+//   res.send('new product')
+//   res.render('products/')
+// })
 
 
 
@@ -33,23 +33,25 @@ router.post('/', (req, res) => {
     picture: req.body.picture
   })
 
-  //saving new products
-  newProduct.save().then((savedProduct) => {
-    console.log(savedProduct)
-    res.redirect(`/products/${savedProduct._id}`) //
 
-  })
-})
+  
 
 //showing new products 
 router.get('/:id', (req, res) => {
 
   Product.findById(req.params.id).then((product) => {
 
-    res.render('product/show', {
+    res.render('product/edit', {
       product: product //product show page
     })
   })
+})
+
+newProduct.save().then((savedProduct) => {
+  console.log(savedProduct)
+  res.redirect(`/products/${savedProduct._id}`) //
+
+})
 })
 
 module.exports = router;

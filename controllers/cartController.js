@@ -27,17 +27,15 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
 
   const newCart = new Cart({
-    name: req.body.name,
-    age: req.body.age,
-    address: req.body.address,
-    phoneNumber: req.body.phoneNumber,
-    product: [req.body.product]
+    product: req.body.product, 
+    price: req.body.price, 
+    quantity: req.body.quantity
   })
 
   //saving new cart
   newCart.save().then((savedCart) => {
     console.log(savedCart)
-    res.redirect(`/items/${savedCart._id}`)
+    res.redirect(`/cart/${savedCart._id}`)
 
   })
 })
