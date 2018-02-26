@@ -37,3 +37,5 @@ www.drivingtoday.com/safety/crashes/index.php
 Photo provided by: 
 http://www.atlantabev.com/
 
+CSS helpers provided by: 
+https://css-tricks.com/perfect-full-page-background-image/
