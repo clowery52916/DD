@@ -8,9 +8,7 @@ router.get('/', (req, res) => {
   console.log('new')
 
   Cart.find().then((items) => {
-    res.render('cart/index', {
-      items: items
-    })
+    res.render('cart/index', {items: items})
 
   })
 })
@@ -20,17 +18,10 @@ router.get('/new', (req, res) => {
   res.render('cart/new')
 })
 
-
-
-
-//create new cart 
+//create new cart
 router.post('/', (req, res) => {
 
-  const newCart = new Cart({
-    product: req.body.product,
-    price: req.body.price,
-    quantity: req.body.quantity
-  })
+  const newCart = new Cart({product: req.body.product, price: req.body.price, quantity: req.body.quantity})
 
   //saving new cart
   newCart.save().then((savedCart) => {
@@ -45,13 +36,11 @@ router.get('/:id', (req, res) => {
 
   Cart.findById(req.params.id).then((cart) => {
 
-    res.render('cart/show', {
-      cart: cart
-    })
+    res.render('cart/show', {cart: cart})
   })
 
 })
-//edit cart 
+//edit cart
 router.get('/:id/edit', (req, res) => {
   Cart.findById(req.params.id).then((cart) => {
     res.render('cart/edit', {
@@ -61,17 +50,14 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 
-
-//update cart 
+//update cart
 
 router.put('/:id', (req, res) => {
   Cart.findByIdAndUpdate(req.params.id, {
     product: req.body.products,
     price: req.body.price,
     quantity: req.body.quantity
-  }, {
-    new: true
-  }).then((updatedCart) => {
+  }, {new: true}).then((updatedCart) => {
     res.redirect(`/cart/${updatedCart._id}`)
   })
 })
@@ -83,6 +69,5 @@ router.delete('/:id', (req, res) => {
     res.redirect('/cart')
   })
 })
-
 
 module.exports = router;

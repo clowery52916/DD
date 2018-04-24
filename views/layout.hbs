@@ -3,12 +3,73 @@
 
 <head>
   <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Overlock+SC" rel="stylesheet">
 </head>
 
 <body>
-  {{{body}}}
+
+  <nav>
+    <div class="nav-wrapper style-nav">
+      <a href="/" class="brand-logo">
+        <i class="em em-taxi"></i>
+      </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse">
+        <i class="material-icons">local_drink</i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/products">Products</a>
+        </li>
+        <li>
+          <a href="/cart">Checkout</a>
+        </li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/users">Users</a>
+        </li>
+        <li>
+          <a href="/users/:id">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    {{{body}}}
+
+  </main>
+
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col l12 s12">
+          <h6 class="white-text">DD</h6>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Copyright Drink Driver LLC
+        <a class="grey-text text-lighten-4 right" href="/"></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="/javascripts/app.js"></script>
 </body>
 
 </html>

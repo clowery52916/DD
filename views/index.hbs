@@ -1,27 +1,56 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}... your Drink Driver</p>
-<div class='new'>
-<h2>Sign Up</h2>
-<form method="POST" action="/users">
-  <div class='light'>
-    <label for="name">User Name</label>
-    <input type="text" name="name">
-  </div>
-  </div>
-  <div class='returning'>
-    <label for="email">Email</label>
-    <input type="text" name="email">
-  </div>
 
-  <button type="submit">Create</button>
-</form>
+<div class="parallax-container land-screen">
+  <div class="cover">
+    <div class="land-text container">
+      <h1>Drink Driver</h1>
+      <img src="https://images.unsplash.com/photo-1516431375070-e29baea9e230?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a7c6eeaedc3080819acc44f01edf953a&auto=format&fit=crop&w=1600&q=500" alt="one beer later beer top" class='mainImage' />
 
 
-<h2>Sign In</h2>
-<form method="POST" action="/products">
-  <div>
-    <label for="name">User Name</label>
-    <input type="text" name="name">
+    </div>
   </div>
-  <button type="submit">Libations Await</button>
-</form>
+  <div class="parallax">
+    <img src="" />
+  </div>
+</div>
+<div class="section white">
+  <div class="row container">
+    <h5 class="header">Drink Smarter</h5>
+    <h5>Live Longer</h5>
+    <p class="grey-text text-darken-3 lighten-3">Did you know that 52% of all car crashes occur 5 miles or less from home? That percentage increases to 77% within 15 miles of your home! On average every 90 seconds, a person is injured in a drunk driving accident and the average number of people
+      driving drunk per day is almost 300,000. Only 4,000 of those people are arrested. In 2013, one person was killed every 53 minutes due to alcohol related accidents. </p>
+  </div>
+</div>
+<div class="parallax-container cover">
+  <div class="container land-text2 newuser-form-container">
+    <div class="parallax">
+      <img src="https://images.unsplash.com/photo-1496564203457-11bb12075d90?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=278fa59687fedfcfd1a2822089593743&auto=format&fit=crop&w=1119&q=80">
+    </div>
+  </div>
+  <form method="POST" action="/users">
+    <div class='light'>
+      <label for="name">User Name</label>
+      <br/>
+      <input type="text" name="name">
+    </div>
+    <div class='returning'>
+      <label for="email">Email</label>
+      <br/>
+      <input type="text" name="email">
+    </div>
+    <br />
+    <button type="submit">Create</button>
+  </form>
+
+  <h2>Sign In</h2>
+  <form method="POST" action="/products">
+    <div>
+      <label for="name">User Name</label>
+      <br/>
+
+      </br/>
+      <input type="text" name="name">
+    </div> <br />
+
+    <button type="submit">Libations Await</button>
+  </form>
+</div>

@@ -8,9 +8,7 @@ router.get('/', (req, res) => {
   console.log('new')
 
   User.find().then((users) => {
-    res.render('user/index', {
-      users: users
-    })
+    res.render('user/index', {users: users})
 
   })
 })
@@ -20,10 +18,7 @@ router.get('/new', (req, res) => {
   res.render('user/new')
 })
 
-
-
-
-//create new user 
+//create new user
 router.post('/', (req, res) => {
 
   const newUser = new User({
@@ -47,14 +42,11 @@ router.get('/:id', (req, res) => {
 
   User.findById(req.params.id).then((user) => {
 
-    res.render('user/show', {
-      user: user
-    })
+    res.render('user/show', {user: user})
   })
 
-
 })
-//edit user 
+//edit user
 router.get('/:id/edit', (req, res) => {
   User.findById(req.params.id).then((user) => {
     res.render('user/edit', {
@@ -64,8 +56,7 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 
-
-//update user 
+//update user
 
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, {
@@ -74,9 +65,7 @@ router.put('/:id', (req, res) => {
     age: req.body.age,
     phoneNumber: req.body.phoneNumber,
     products: req.body.products
-  }, {
-    new: true
-  }).then((updatedUser) => {
+  }, {new: true}).then((updatedUser) => {
     res.redirect(`/users/${updatedUser._id}`)
   })
 })
@@ -88,6 +77,5 @@ router.delete('/:id', (req, res) => {
     res.redirect('/users')
   })
 })
-
 
 module.exports = router;

@@ -2,15 +2,8 @@
   font-size: 20px
 }
 
-html {
-  font-family: GillSans, Calibri, Trebuchet, sans-serif;
-  background: url(https://i.imgur.com/MtLzPhh.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: whitesmoke;
-
+nav {
+  background: black;
 }
 
 form {
@@ -18,37 +11,39 @@ form {
 }
 
 h1 {
-  font-size: 130px;
-  opacity: 0.5;
-  color: black;
+  font-size: 80px;
+  font-family: 'IM Fell English SC', serif;
+}
 
+h6 {
+  font-family: 'IM Fell English SC', serif;
+}
+
+p, h3, h2, div, button {
+  font-family: 'Overlock SC', cursive;
+}
+
+.mainImage {
+  width: 600px;
+  height: 80%;
+}
+
+.dd-store {
+  font-family: 'IM Fell English SC', serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center
 }
 
 a {
   color: black;
-}
-p {
-  color: whitesmoke;
-  font-size: 30px;
-}
-
-h2 {
-  opacity: 0.9;
-  font-size: 40px;
-  color: whitesmoke;
-  text-shadow: 30px;
-}
-h3 {
-  opacity: 0.9;
-  font-size: 30px;
-  color: whitesmoke;
-  text-shadow: 30px;
+  text-decoration: none;
 }
 
 input.rounded {
@@ -57,6 +52,34 @@ input.rounded {
   padding: 4px 7px;
   outline: 0;
 }
+
 div {
   align-content: space-between
 }
+
+/* button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #121412;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+} */
+
+button:hover {
+  background-color: #121412;
+  color: whitesmoke;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+button:active {
+  background-color: #121412;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);

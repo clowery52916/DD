@@ -9,9 +9,7 @@ router.get('/', (req, res) => {
   console.log('new')
 
   Product.find().then((products) => {
-    res.render('product/index', {
-      products: products
-    })
+    res.render('product/index', {products: products})
 
   })
 })
@@ -21,22 +19,12 @@ router.get('/products/', (req, res) => {
   res.render('/products/')
 })
 
-
-
-
-//create new products 
+//create new products
 router.post('/', (req, res) => {
 
-  const newProduct = new Product({
-    product: req.body.product,
-    price: req.body.price,
-    picture: req.body.picture
-  })
+  const newProduct = new Product({product: req.body.product, price: req.body.price, picture: req.body.picture})
 
-
-
-
-  //showing new products 
+  //showing new products
   router.get('/:id', (req, res) => {
 
     Product.findById(req.params.id).then((product) => {
@@ -58,14 +46,10 @@ router.put('/cart', (req, res) => {
   User.findByIdAndUpdate(req.params.id, {
     product: req.body.product,
     price: req.body.price,
-    quantity: req.body.quantity,
-
-  }, {
-    new: true
-  }).then((updatedUser) => {
+    quantity: req.body.quantity
+  }, {new: true}).then((updatedUser) => {
     res.redirect(`/users/${updatedUser._id}`)
   })
 })
-
 
 module.exports = router;

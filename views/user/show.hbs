@@ -1,11 +1,11 @@
 <h2>
   Hello, {{user.name}}. Welcome Back!</h2>
 <br>
-<h6>My Address: {{user.address}}</h6>
+<h3>My Address: {{user.address}}</h3>
 <br>
-<h6>My Birthday: {{user.age}}</h6>
+<h3>My Birthday: {{user.age}}</h3>
 </br>
-<h6>My Phone Number: {{user.phoneNumber}}</h6>
+<h3>My Phone Number: {{user.phoneNumber}}</h3>
 </br>
 
 
@@ -15,10 +15,12 @@
 </button>
 
 <form method="POST" action="/products">
+  <br />
 
   <button type="submit">Libations Await</button>
 
 </form>
 <form action="/users/{{user._id}}?_method=DELETE" method="POST">
+  <br />
   <button type="submit">Delete</button>
 </form>
