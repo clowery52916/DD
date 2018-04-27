@@ -10,9 +10,12 @@ My hope with DD is to allow everyone, everywhere the ability to make the right c
 
 So, if you need some wine, drop us a line, if you need some beer, we are here, if you need some liquor, we will deliver it quicker and if you are just lazy and don't want to go to the store, we will show up at your door!
 
+Future Plans:
+I would like to get the Products and Cart page operation and bring in React to make the functionality of this application possible. I would like to bring in the google maps 3rd party API for geolocation.
+
 Technical Specifications:
 
-To build out this application, I used MEN stack, which is Mongoose, Express and NodeJs, using MongoDB for the database and using a built in helper methods using Handlebars. Handlebars is used to help build out semantic templates, frustration free. HTML, CSS and JavaScript were used for style and functionality. This application was deployed using Heroku.  This is a full crud application, that has the following:
+To build out this application, I used MEN stack, which is Mongoose, Express and NodeJs, using MongoDB/NoSQL for the database and using a built in helper method, Handlebars. Handlebars is used to help build out semantic templates, frustration free. HTML, CSS and JavaScript were used for style and functionality. This application was deployed using Heroku.  This is a full crud application, that has the following:
 
 Project Links:
 
